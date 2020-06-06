@@ -3,17 +3,17 @@ using namespace std;
 int main(int argc, char** argv)
 {
 	int limit;
-	cout << "½Ð¿é¤J¼Æ¾Ú¶q" << endl;
+	cout << "è«‹è¼¸å…¥æ•¸æ“šé‡" << endl;
 	cin >> limit;
 	int array[100];
-	//¿é¤J¾ã¼Æ¦r¦ê
-	cout << "½Ð¿é¤J¾ã¼Æ°}¦C¤¸¯À" << endl;
+	//è¼¸å…¥æ•´æ•¸å­—ä¸²
+	cout << "è«‹è¼¸å…¥æ•´æ•¸é™£åˆ—å…ƒç´ " << endl;
 	for (int i = 0; i < limit; i++)
 	{
 		cin >> array[i];
-		cout << "²Ä" << i << "­Ó¤¸¯À¿é¤J§¹²¦" << endl;
+		cout << "ç¬¬" << i << "å€‹å…ƒç´ è¼¸å…¥å®Œç•¢" << endl;
 	}
-	//best¬°³Ì¤j¸Ñ
+	//bestç‚ºæœ€å¤§è§£
 	int sum = 0;
 	int best = 0;
 	for (int j = 0; j < limit; j++)
