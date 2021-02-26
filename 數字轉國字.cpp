@@ -1,50 +1,50 @@
-//½d³ò¬°0~9999»õªº¼Æ¦rÂà°ê¦r¤pµ{¦¡
+//ç¯„åœç‚º0~9999å„„çš„æ•¸å­—è½‰åœ‹å­—å°ç¨‹å¼
 #include <iostream>
 #include <string>
 using namespace std;
 void output(int n)
 {
-	string chinese[10] = { "¹s","³ü","¶L","°Ñ","¸v","¥î","³°","¬m","®Ã","¨h" };
+	string chinese[10] = { "é›¶","å£¹","è²³","åƒ","è‚†","ä¼","é™¸","æŸ’","æŒ","ç–" };
 	//0~999
 	//1000~9999
 	if (n >= 1000)
 	{
-		//¦L¥X¤d¦ì
-		cout << chinese[n / 1000] << "¥a";
-		//·í¦Ê¦ì!=0¦L¥X¦Ê¦ì¼Æ
+		//å°å‡ºåƒä½
+		cout << chinese[n / 1000] << "ä»Ÿ";
+		//ç•¶ç™¾ä½!=0å°å‡ºç™¾ä½æ•¸
 		if ((n % 1000) / 100 != 0)
-			cout << chinese[(n % 1000) / 100] << "¨Õ";
-		//·í¦Ê¦ì=0¥B¤Q¦ì!=0¦L¥X¹s
+			cout << chinese[(n % 1000) / 100] << "ä½°";
+		//ç•¶ç™¾ä½=0ä¸”åä½!=0å°å‡ºé›¶
 		else if (((n % 1000) / 100 == 0 && ((n % 1000) % 100) / 10 != 0))
-			cout << "¹s";
-		//¦Ê¦ì!=0¦L¥X¤Q¦ì¼Æ1
+			cout << "é›¶";
+		//ç™¾ä½!=0å°å‡ºåä½æ•¸1
 		if (((n % 1000) % 100) / 10 != 0)
-			cout << chinese[((n % 1000) % 100) / 10] << "¬B";
-		//¦Ê¦ì¼Æ!=0¥B¦Ê¦ì=0¦L¥X¹s
+			cout << chinese[((n % 1000) % 100) / 10] << "æ‹¾";
+		//ç™¾ä½æ•¸!=0ä¸”ç™¾ä½=0å°å‡ºé›¶
 		else if (((n % 1000) / 100 != 0 && ((n % 1000) % 100) / 10 == 0))
-			cout << "¹s";
-		//·í¤d¦ì,¦Ê¦ì,­Ó¦ì¦P®É!=0®É¡A¤d¦ì,¦Ê¦ì¨âªÌ¥H¹sªí¥Ü
+			cout << "é›¶";
+		//ç•¶åƒä½,ç™¾ä½,å€‹ä½åŒæ™‚!=0æ™‚ï¼Œåƒä½,ç™¾ä½å…©è€…ä»¥é›¶è¡¨ç¤º
 		if (((n % 1000) / 100 == 0 && ((n % 1000) % 100) / 10 == 0) && (((n % 1000) % 100) % 10) != 0)
-			cout << "¹s";
-		//·í­Ó¦ì!=0®É¦L¥X­Ó¦ì¼Æ
+			cout << "é›¶";
+		//ç•¶å€‹ä½!=0æ™‚å°å‡ºå€‹ä½æ•¸
 		if (((n % 1000) % 100) % 10 != 0)
 			cout << chinese[((n % 1000) % 100) % 10];
 	}
 	//100~999
 	else if (n >= 100)
 	{
-		cout << chinese[n / 100] << "¨Õ";
+		cout << chinese[n / 100] << "ä½°";
 		if (n % 100 > 10 && n != 100)
-			cout << chinese[(n % 100) / 10] << "¬B";
+			cout << chinese[(n % 100) / 10] << "æ‹¾";
 		else if (n % 100 < 10 && n != 100)
-			cout << "¹s";
+			cout << "é›¶";
 		if (n != 100)
 			cout << chinese[(n % 100) % 10] << endl;
 	}
 	//10~99
 	else if (n >= 10)
 	{
-		cout << chinese[n / 10] << "¬B";
+		cout << chinese[n / 10] << "æ‹¾";
 		if (n % 10 != 0)
 			cout << chinese[n % 10];
 	}
@@ -52,22 +52,22 @@ void output(int n)
 	else if (n >= 0)
 		cout << chinese[n] << endl;
 }
-int main(int argc, char** argv)
+int main()
 {
 	int yi, wan, ge;
 	int input;
-	cout << "Âà´««e¡G";
+	cout << "è½‰æ›å‰ï¼š";
 	cin >> input;
-	cout << "Âà´««á¡G";
+	cout << "è½‰æ›å¾Œï¼š";
 	if (input >= 100000000)
 	{
 		yi = input / 100000000;
 		wan = (input % 100000000) / 10000;
 		ge = (input % 100000000) % 10000;
 		output(yi);
-		cout << "»õ";
+		cout << "å„„";
 		output(wan);
-		cout << "¸U";
+		cout << "è¬";
 		output(ge);
 	}
 	else if (input >= 10000)
@@ -75,12 +75,11 @@ int main(int argc, char** argv)
 		wan = input / 10000;
 		ge = input % 10000;
 		output(wan);
-		cout << "¸U";
+		cout << "è¬";
 		output(ge);
 	}
 	else if (input >= 0)
 		output(input);
 	cout << endl;
-	system("PAUSE");
 	return 0;
 }
