@@ -7,9 +7,9 @@
 但是准考證號碼已經公佈
 如何依靠輸入准考證號碼以得知新的考場以及座號？
 
-V1是我剛學會寫程式寫的，V2是我最近寫的。那時候還沒有學會字串處理，只會傻傻的拿數字來做
+TranslateSystem_01是我剛學會寫程式寫的，TranslateSystem_02是我最近寫的。那時候還沒有學會字串處理，只會傻傻的拿數字來做
 ```c++
-//V1
+//TranslateSystem_01
 #include <iostream>
 using namespace std;
 int main(int argc, char** argv)
@@ -102,7 +102,7 @@ int main(int argc, char** argv)
 }
 ```
 ```c++
-//V2
+//TranslateSystem_02
 #include <iostream>
 #include <string>
 using namespace std;
