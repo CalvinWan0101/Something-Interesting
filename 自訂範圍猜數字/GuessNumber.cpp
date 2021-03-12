@@ -15,9 +15,9 @@ int main()
         cout << "Input Your Answer : ";
         cin >> guess;
         if (guess < answer)
-            cout << "Larger" << endl;
+            cout << "Smaller than the answer" << endl;
         else if (guess > answer)
-            cout << "Smaller" << endl;
+            cout << "Bigger than the answer" << endl;
         else
         {
             cout << "You got the Answer ! The Answer is " << answer << endl;
