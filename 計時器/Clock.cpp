@@ -9,7 +9,7 @@ int main()
     int a, b, c;
     cout << "Time: ";
     cin >> a >> b >> c;
-    while ()
+    while (true)
         for (int hr = a; hr < 24; hr++)
             for (int min = b; min < 59; min++)
                 for (int sec = c; sec < 59; sec++)
