@@ -17,7 +17,8 @@ int main()
         puts(a[i]);
     while (true)
     {
-        input = _getch();
+        //input no enter
+        input = getch();
         //down
         if (input == 's' && a[x + 1][y] == ' ')
         {
@@ -46,6 +47,7 @@ int main()
             y++;
             a[x][y] = 'O';
         }
+        //clear screen
         system("cls");
         for (int i = 0; i <= 7; i++)
             puts(a[i]);
