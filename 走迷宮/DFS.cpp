@@ -10,7 +10,6 @@ char map[50][50] = {"############",
                     "#       ##  ",
                     "############"};
 int bucket[50][50] = {0};
-int k = 1;
 void dfs(int y, int x, int step)
 {
     //1s走一次
