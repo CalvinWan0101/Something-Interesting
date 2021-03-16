@@ -8,6 +8,10 @@
 - [Basic(2.0)](https://github.com/CalvinWan0101/Interesting/blob/master/%E8%B5%B0%E8%BF%B7%E5%AE%AE/Basic(2.0).cpp)
 
 ### 程式碼解釋
+使用system("cls")
+`#include <windows.h>`
+使用getch()
+`#include <conio.h>`
 先預定好要走的迷宮，此程式只有"走迷宮"，"生成迷宮"會難很多。
 ```c++
 char a[50][50] = {"############",
