@@ -2,7 +2,7 @@
 
 ### 檔案說明
 
-(1.0)是使用cout,endl來印出地圖，但是好像印的不夠快會有肉眼可見的閃屏，(2.0)使用puts跟printf就不會有閃屏了。
+Basic(1.0)是使用cout,endl來印出地圖，但是好像印的不夠快會有肉眼可見的閃屏，Basic(2.0)使用puts跟printf就不會有閃屏了。
 
 - [Basic(1.0)](https://github.com/CalvinWan0101/Interesting/blob/master/%E8%B5%B0%E8%BF%B7%E5%AE%AE/Basic(1.0).cpp)
 - [Basic(2.0)](https://github.com/CalvinWan0101/Interesting/blob/master/%E8%B5%B0%E8%BF%B7%E5%AE%AE/Basic(2.0).cpp)
@@ -78,4 +78,66 @@ while (true)
 印出you win
 ```c++
 printf("you win!");
+```
+完整程式碼:
+```c++
+#include <cstdio>
+#include <windows.h>
+#include <conio.h>
+char a[50][50] = {"############",
+                  "#O#    #   #",
+                  "#   ## # # #",
+                  "#####    # #",
+                  "#     #### #",
+                  "# #####  # #",
+                  "#       ##  ",
+                  "############"};
+int main()
+{
+    int x = 1, y = 1;
+    char input;
+    for (int i = 0; i <= 7; i++)
+        puts(a[i]);
+    while (true)
+    {
+        //input no enter
+        input = getch();
+        //down
+        if (input == 's' && a[x + 1][y] == ' ')
+        {
+            a[x][y] = ' ';
+            x++;
+            a[x][y] = 'O';
+        }
+        //up
+        else if (input == 'w' && a[x - 1][y] == ' ')
+        {
+            a[x][y] = ' ';
+            x--;
+            a[x][y] = 'O';
+        }
+        //left
+        else if (input == 'a' && a[x][y - 1] == ' ')
+        {
+            a[x][y] = ' ';
+            y--;
+            a[x][y] = 'O';
+        }
+        //right
+        else if (input == 'd' && a[x][y + 1] == ' ')
+        {
+            a[x][y] = ' ';
+            y++;
+            a[x][y] = 'O';
+        }
+        //clear screen
+        system("cls");
+        for (int i = 0; i <= 7; i++)
+            puts(a[i]);
+        if (x == 6 && y == 11)
+            break;
+    }
+    printf("you win!");
+    return 0;
+}
 ```
