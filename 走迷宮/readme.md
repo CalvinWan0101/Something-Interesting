@@ -1,7 +1,77 @@
 ## 使用getch()走固定ASCII迷宮
 
+### 檔案說明
+
 (1.0)是使用cout,endl來印出地圖，但是好像印的不夠快會有肉眼可見的閃屏，(2.0)使用puts跟printf就不會有閃屏了。
 
 - [Basic(1.0)](https://github.com/CalvinWan0101/Interesting/blob/master/%E8%B5%B0%E8%BF%B7%E5%AE%AE/Basic(1.0).cpp)
 - [Basic(2.0)](https://github.com/CalvinWan0101/Interesting/blob/master/%E8%B5%B0%E8%BF%B7%E5%AE%AE/Basic(2.0).cpp)
 
+### 程式碼解釋
+先預定好要走的迷宮，此程式只有"走迷宮"，"生成迷宮"會難很多。
+```c++
+char a[50][50] = {"############",
+                  "#O#    #   #",
+                  "#   ## # # #",
+                  "#####    # #",
+                  "#     #### #",
+                  "# #####  # #",
+                  "#       ##  ",
+                  "############"};
+```
+出發點是坐標(y,x) == (1,1),input為玩家操控(W,A,S,D)所輸入的指令
+```c++
+int x = 1, y = 1;
+    char input;
+```
+印出第0行到第7行
+```c++
+for (int i = 0; i <= 7; i++)
+        puts(a[i]);
+```
+每次都使用getch()輸入input,根據輸入的字母去相對應做出上下左右的地圖更動。每次更動完都使用system("cls")來清理熒幕，然後再重新印出來。當 x==6 && y==11(終點坐標)便break掉迴圈表示已達終點。
+```c++
+while (true)
+    {
+        //input no enter
+        input = getch();
+        //down
+        if (input == 's' && a[x + 1][y] == ' ')
+        {
+            a[x][y] = ' ';
+            x++;
+            a[x][y] = 'O';
+        }
+        //up
+        else if (input == 'w' && a[x - 1][y] == ' ')
+        {
+            a[x][y] = ' ';
+            x--;
+            a[x][y] = 'O';
+        }
+        //left
+        else if (input == 'a' && a[x][y - 1] == ' ')
+        {
+            a[x][y] = ' ';
+            y--;
+            a[x][y] = 'O';
+        }
+        //right
+        else if (input == 'd' && a[x][y + 1] == ' ')
+        {
+            a[x][y] = ' ';
+            y++;
+            a[x][y] = 'O';
+        }
+        //clear screen
+        system("cls");
+        for (int i = 0; i <= 7; i++)
+            puts(a[i]);
+        if (x == 6 && y == 11)
+            break;
+    }
+```
+印出you win
+```c++
+printf("you win!");
+```
