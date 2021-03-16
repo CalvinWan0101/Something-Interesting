@@ -7,6 +7,12 @@ Basic(1.0)是使用cout,endl來印出地圖，但是好像印的不夠快會有�
 - [Basic(1.0)](https://github.com/CalvinWan0101/Interesting/blob/master/%E8%B5%B0%E8%BF%B7%E5%AE%AE/Basic(1.0).cpp)
 - [Basic(2.0)](https://github.com/CalvinWan0101/Interesting/blob/master/%E8%B5%B0%E8%BF%B7%E5%AE%AE/Basic(2.0).cpp)
 
+想到我之前在ZeroJudge有寫過一題用DFS,BFS去解迷宮最佳解的題目，想嘗試使用印出地圖來看看他嘗試的路徑
+- [題目鏈接](https://zerojudge.tw/ShowProblem?problemid=a982)
+- [解題報告](https://github.com/CalvinWan0101/ZeroJudge/tree/main/Basic/a982-%E8%BF%B7%E5%AE%AE%E5%95%8F%E9%A1%8C)
+- [Map_DFS](https://github.com/CalvinWan0101/Interesting/blob/master/%E8%B5%B0%E8%BF%B7%E5%AE%AE/Map_DFS.cpp)
+- [Map_BFS](https://github.com/CalvinWan0101/Interesting/blob/master/%E8%B5%B0%E8%BF%B7%E5%AE%AE/Map_BFS.cpp)
+
 ### 程式碼解釋
 - `#include <cstdio>`    使用puts(),printf
 - `#include <windows.h>` 使用system("cls")
