@@ -40,33 +40,33 @@ while (true)
         //input no enter
         input = getch();
         //down
-        if (input == 's' && map[x + 1][y] == ' ')
-        {
-            map[x][y] = ' ';
-            x++;
-            map[x][y] = 'O';
-        }
-        //up
-        else if (input == 'w' && map[x - 1][y] == ' ')
-        {
-            map[x][y] = ' ';
-            x--;
-            map[x][y] = 'O';
-        }
-        //left
-        else if (input == 'a' && map[x][y - 1] == ' ')
-        {
-            map[x][y] = ' ';
-            y--;
-            map[x][y] = 'O';
-        }
-        //right
-        else if (input == 'd' && map[x][y + 1] == ' ')
-        {
-            map[x][y] = ' ';
-            y++;
-            map[x][y] = 'O';
-        }
+        if ((input == 's' || input == 'S') && map[x + 1][y] == ' ')
+		{
+			map[x][y] = ' ';
+			x++;
+			map[x][y] = 'O';
+		}
+		//up
+		else if ((input == 'w' || input == 'W') && map[x - 1][y] == ' ')
+		{
+			map[x][y] = ' ';
+			x--;
+			map[x][y] = 'O';
+		}
+		//left
+		else if ((input == 'a' || input == 'A') && map[x][y - 1] == ' ')
+		{
+			map[x][y] = ' ';
+			y--;
+			map[x][y] = 'O';
+		}
+		//right
+		else if ((input == 'd' || input == 'D') && map[x][y + 1] == ' ')
+		{
+			map[x][y] = ' ';
+			y++;
+			map[x][y] = 'O';
+		}
         //clear screen
         system("cls");
         for (int i = 0; i <= 7; i++)
