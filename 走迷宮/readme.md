@@ -36,11 +36,9 @@ for (int i = 0; i <= 7; i++)
 每次都使用getch()輸入input,根據輸入的字母去相對應做出上下左右的地圖更動。每次更動完都使用system("cls")來清理熒幕，然後再重新印出來。當 x==6 && y==11(終點坐標)便break掉迴圈表示已達終點。
 ```c++
 while (true)
-    {
-        //input no enter
-        input = getch();
-        //down
-        if ((input == 's' || input == 'S') && map[x + 1][y] == ' ')
+	{
+		input = getch();
+		if ((input == 's' || input == 'S') && map[x + 1][y] == ' ')
 		{
 			map[x][y] = ' ';
 			x++;
@@ -67,17 +65,88 @@ while (true)
 			y++;
 			map[x][y] = 'O';
 		}
-        //clear screen
-        system("cls");
-        for (int i = 0; i <= 7; i++)
-            puts(map[i]);
-        if (x == 6 && y == 11)
-            break;
-    }
+		system("cls");
+		for (int i = 0; i <= 7; i++)
+		{
+			for (int j = 0; j <= 11; j++)
+				cout << map[i][j];
+			cout << endl;
+		}
+		if (x == 6 && y == 11)
+			break;
+	}
 ```
 印出you win
 ```c++
 printf("you win!");
+```
+完整程式碼:
+```c++
+#include <iostream>
+#include <windows.h>
+#include <conio.h>
+char map[50][50] = {"############",
+					"#O#    #   #",
+					"#   ## # # #",
+					"#####    # #",
+					"#     #### #",
+					"# #####  # #",
+					"#       ##  ",
+					"############"};
+using namespace std;
+int main()
+{
+	int x = 1, y = 1;
+	char input;
+	for (int i = 0; i <= 7; i++)
+	{
+		for (int j = 0; j <= 11; j++)
+			cout << map[i][j];
+		cout << endl;
+	}
+	while (true)
+	{
+		input = getch();
+		if ((input == 's' || input == 'S') && map[x + 1][y] == ' ')
+		{
+			map[x][y] = ' ';
+			x++;
+			map[x][y] = 'O';
+		}
+		//up
+		else if ((input == 'w' || input == 'W') && map[x - 1][y] == ' ')
+		{
+			map[x][y] = ' ';
+			x--;
+			map[x][y] = 'O';
+		}
+		//left
+		else if ((input == 'a' || input == 'A') && map[x][y - 1] == ' ')
+		{
+			map[x][y] = ' ';
+			y--;
+			map[x][y] = 'O';
+		}
+		//right
+		else if ((input == 'd' || input == 'D') && map[x][y + 1] == ' ')
+		{
+			map[x][y] = ' ';
+			y++;
+			map[x][y] = 'O';
+		}
+		system("cls");
+		for (int i = 0; i <= 7; i++)
+		{
+			for (int j = 0; j <= 11; j++)
+				cout << map[i][j];
+			cout << endl;
+		}
+		if (x == 6 && y == 11)
+			break;
+	}
+	cout << "you win!" << endl;
+	return 0;
+}
 ```
 
 之前在ZeroJudge有寫過一題用DFS,BFS去解迷宮最佳解的題目，想嘗試使用印出地圖來看看他嘗試的路徑(可以看看：P)
